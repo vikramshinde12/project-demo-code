@@ -1,0 +1,23 @@
+steps:
+- id: 'cloudcomposer_zip'
+  name: gcr.io/$PROJECT_ID/zip
+  args: ['-r', '-D', 'composer/${_CLOUDCOMPOSER_ZIP}', '.']
+
+- id: 'cloudcomposer_deploy'
+  name: 'gcr.io/cloud-builders/gcloud'
+  args:
+  - composer
+  - environments
+  - storage
+  - dags
+  - import
+  - --environment
+  - ${_ENVIRONMENT_NAME}
+  - --location
+  - ${_REGION}
+  - --source
+  - composer/${_CLOUDCOMPOSER_ZIP}
+substitutions:
+  _CLOUDCOMPOSER_ZIP: "${_CLOUDCOMPOSER_ZIP}"
+  _ENVIRONMENT_NAME: "${_ENVIRONMENT_NAME}"
+  _REGION: "${_REGION}"

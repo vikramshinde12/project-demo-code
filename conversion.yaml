@@ -1,0 +1,13 @@
+airflow:
+  processing_groups:
+    - name: upload_file
+      id: upload_file
+      schedule: 0 0 * * *
+      start_date: 2021-01-16T12:00
+      gcloud_function_url: https://us-central1-absolute-water-300415.cloudfunctions.net/function_1
+
+    - name: process_file
+      id: process_file
+      schedule: 0 0 * * *
+      start_date: 2021-01-16T12:00
+      gcloud_function_url: https://us-central1-absolute-water-300415.cloudfunctions.net/function_2
