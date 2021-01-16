@@ -11,15 +11,3 @@ airflow:
       schedule: 0 0 * * *
       start_date: 2021-01-16T12:00
       gcloud_function_url: https://us-central1-absolute-water-300415.cloudfunctions.net/function_2
-
-    - name: test_file
-      id: test_file
-      schedule: 0 0 * * *
-      start_date: 2021-01-16T12:00
-      gcloud_function_url: https://us-central1-absolute-water-300415.cloudfunctions.net/function_3
-
-    - name: reject_file
-      id: reject_file
-      schedule: 0 0 * * *
-      start_date: 2021-01-16T12:00
-      gcloud_function_url: https://us-central1-absolute-water-300415.cloudfunctions.net/func2
