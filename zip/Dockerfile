@@ -1,5 +1,3 @@
-FROM ubuntu
-RUN apt-get -q update && \
-apt-get -qqy install zip bzip2 gzip
-
+FROM alpine:3.7
+RUN apk add --no-cache zip
 ENTRYPOINT ["zip"]
